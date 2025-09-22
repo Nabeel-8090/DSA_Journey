@@ -54,6 +54,10 @@ public:
 
         Node* temp = head;
         for(int i=0; i<pos-1; i++) {
+            if(temp == NULL) {
+                cout << "Invalid Position!" << endl;
+                return;
+            }
             temp = temp->next;
         }
 
