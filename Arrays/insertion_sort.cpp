@@ -6,10 +6,10 @@ int main() {
     int n = 5;
     int array[n] = {125, 34, 120, 7, 3};
 
-    for(int i=0; i<n; i++) {
+    for(int i=1; i<n; i++) {
         int key = array[i];
         int j = i - 1;
-        while(j>=0 && array[i]>key) {
+        while(j>=0 && array[j]>key) {
             array[j+1] = array[j];
             j--;
         }
