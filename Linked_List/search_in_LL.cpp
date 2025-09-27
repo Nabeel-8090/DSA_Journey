@@ -21,7 +21,7 @@ public:
         head = tail = NULL;
     }
 
-    void push_front(int value) {
+    void push_front(int value) { // O(1)
         Node* newNode = new Node(value);
         if(head == NULL) {
             head = tail = newNode;
@@ -32,7 +32,7 @@ public:
         }
     }
 
-    int search(int key) {
+    int search(int key) { // O(n)
         Node* temp = head;
         int index = 0;
         while(temp != NULL) {
@@ -64,7 +64,7 @@ int main() {
 
     ll.printLL();
 
-    int index = ll.search(800);
+    int index = ll.search(700);
     if(index >= 0) {
         cout << "Found at index: " << index << endl;
     } else {
