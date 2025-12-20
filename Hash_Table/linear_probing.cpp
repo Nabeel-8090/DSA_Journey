@@ -31,10 +31,29 @@ public:
         table[index] = key;
     }
 
+    void deletion(int key) {
+        int index = hash(key);
+        int startIndex = index;
+
+        while(true) {
+            if(key == table[index]) {
+                table[index] = -2;
+                cout << "Deleting " << key << " from index " << index << endl;
+                return;
+            }
+            index = (index + 1) % size;
+            if(index == startIndex) {
+                cout << key << " not found in table" << endl;
+                return;
+            }
+        }
+    }
+
     void display() {
         for(int i=0; i<size; i++) {
             cout << i << " : " << table[i] << endl; 
         }
+        cout << endl;
     }
 
     ~HashTable() {
@@ -51,9 +70,12 @@ int main() {
     ht.insert(57);
     ht.insert(58);
     ht.insert(59);
-    ht.insert(70);
 
     ht.display();
 
+    ht.deletion(58);
+    ht.display();
+
+    
     return 0;
 }
